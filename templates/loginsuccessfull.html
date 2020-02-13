@@ -1,0 +1,19 @@
+{%extends "layout.html"%}
+{% block list%} <li><a href=" {{ url_for('loginsuccessfull',name=name) }}">Home</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+  <div class='home'>
+       {% if name %}
+         <H2>Hey There {{ name }}</h2>
+        {%endif%}
+     <ul>
+      <h3> <li><a href="{{ url_for('Map') }}" target="_blank">Map</a></li></h3>
+      <h3><li>  <a  href="{{ url_for('index') }}"> Click here to go to height collector App</a></li></h3>
+        <h3><li><a href="{{ url_for('dictionary') }}" >Dictionary</a></li></h3>
+      <h3>  <Li><a  href="{{ url_for('web') }}"> Click here to view Property Details</a></li></h3>
+     <h3><li>  <a  href="{{ url_for('olx_fun') }}"> Click here to view OLX data</a></li></h3>
+     <h3><li>  <a  href="{{ url_for('stck') }}"> Click here to view Stock data</a></li></h3>
+     <h3><li>  <a  href="{{ url_for('upload') }}">GeoCoder App</a></li></h3>
+     </ul>
+</div>
+{%endblock%}

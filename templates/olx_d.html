@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home">
+    <h3>Property Details of accessories website:"https://www.olx.in/accessories_c1457"</h3>
+    {% if q== None %}
+    <center>  <a  href="{{ url_for('olx_fun',q='T') }}"> Click here to save data </a>
+      {{df1 | safe }} </center>
+    {% endif%}
+    {% if q=='T' %}
+      <center>   Your data has been saved in file "data_olx.csv" </center>
+    {% endif%}
+</div>
+{% endblock %}

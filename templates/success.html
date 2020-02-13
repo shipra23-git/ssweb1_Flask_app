@@ -1,0 +1,18 @@
+{%extends "layout.html"%}
+{% block list%} <li><a href=" {{ url_for('loginsuccessfull') }}">Home</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+
+    <div class="home">
+      <h1> Collecting Heights</h1>
+
+        <table border=0>
+       <tr>
+          <th> </th><td>Data submission successsfull.<br></td>
+          <p>Results will be shared with you soon</p>
+       </tr>
+
+     </table>
+        </form>
+      </div>
+{%endblock%}

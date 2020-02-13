@@ -1,0 +1,13 @@
+{%extends "layout.html"%}
+{% block list%} <li><a href=" {{ url_for('loginsuccessfull') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+  <div class='home'>
+    <h1>MY dictionary </h1>
+     {% if flag==4 %}
+     <p>{{ message }}</p>
+     <a href="{{ url_for('dictionary') }}">Click here to search again</a>
+        {% endif %}
+</div>
+{%endblock%}

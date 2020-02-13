@@ -1,0 +1,10 @@
+{%extends "layout.html"%}
+{% block list%} <li><a href=" {{ url_for('loginsuccessfull') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+<div class="about">
+    <h1> MY ABOUT PAGE</h1>
+      <P> This is test about page</p>
+    </div>
+{%endblock%}

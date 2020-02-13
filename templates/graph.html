@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block list%}
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>{%endblock%}
+{% block content %}
+<div class="home">
+    <h1>Property Graph</h1>
+<center>
+    {{script |safe }}
+    {{ div | safe}}</center>
+</div>
+{% endblock %}

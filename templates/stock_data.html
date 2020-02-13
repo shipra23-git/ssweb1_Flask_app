@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home">
+    <h1>My homepage</h1>
+    <p>This is a test website</p>
+    <li><a  href="{{ url_for('web') }}"> Click here to view Property Details</a></li>
+    <li><a  href="{{ url_for('olx_fun') }}"> Click here to view OLX data</a></li>
+    {{ script1 | safe}}
+    {{ div1 | safe}}
+</div>
+{% endblock %}

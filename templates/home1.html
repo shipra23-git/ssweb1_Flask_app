@@ -1,0 +1,38 @@
+{%extends "layout.html"%}
+{% block list%}
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>{%endblock%}
+{%block content%}
+<center>
+  <div class='home'>
+    <h1>MY HOMEPAGE </h1>
+    {% if error== null and count==1 %}
+     <h3><p style="text-align:center"> PLEASE LOGIN</p></h3>
+     {%endif%}
+     {% if count<4 %}
+        <form action = {{ url_for('validate',count=count) }} method="POST">
+          <table border=0>
+         <tr>
+            <th> NAME</th><td><input type= 'text' name="name"/></td>
+         </tr>
+         <tr>
+            <th> Password</th><td><input type= 'password' name="password"/></td>
+          </tr>
+          <tr>
+              <th>Submit</th><td><center><input type= 'submit' name="submit"/></center></td>
+          </tr>
+       </table>
+       </form>
+        {{ error }}
+        {% elif count>=4 %}
+          <h3> {{ error }} </h3>
+          <br>
+          <a href="{{ url_for('home') }}"> CLick Here to Home Page!!</a>
+        {% elif count==0 %}
+            <h3> {{ error }} </h3>
+            <br>
+            <P TEXT_ALign='center'><a href="{{ url_for('home') }}"> CLick Here Login again Page!!</a></p>
+        {%endif%}
+</div>
+</center>
+{%endblock%}

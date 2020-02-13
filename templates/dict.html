@@ -1,0 +1,55 @@
+{%extends "layout.html"%}
+
+{% block list%} <li><a href=" {{ url_for('loginsuccessfull') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+  <div class='home'>
+    <h1>MY dictionary </h1>
+        <form action = {{ url_for('dictionary') }} method="POST">
+          <table border=0>
+         <tr>
+            <th> Enter word</th><td><input type= 'text' name="word"/></td>
+         </tr>
+          <tr>
+              <th><button type="submit">Search</button><br></th>
+          </tr>
+       </table>
+       </form>
+       {% if flag==0 and name %}
+          <p>Meaning:</p>
+          <ul>
+            {%for x in name%}
+            <li>{{ x }}</li>
+            {% endfor %}
+          </ul>
+
+       {% elif flag==1 %}
+
+        <form action = {{ url_for('t_close',name=name[0]) }} method="POST">
+          <table border=0>
+          <tr>
+             <th>Did you mean</th><td> {{ name[0] }} ?</td>
+          </tr>
+         <tr>
+            <th> <button type="submit">YES</button><br></th>
+            <td> <button type="submit" formaction={{ url_for('t_close',name='2N') }} >NO </button><br></td>
+         </tr>
+           </table>
+      </form>
+      {% elif flag==2 %}
+
+       <form action = {{ url_for('t_close',name=name[1] ) }} method="POST">
+         <table border=0>
+         <tr>
+            <th> <p>Did you mean </th><td> {{ name[1] }} ? </td>
+         </tr>
+        <tr>
+          <th>  <button type="submit">YES</button><br></th>
+          <td>  <button type="submit" formaction={{ url_for('t_close',name='NUll') }} >NO </button><br></td>
+        </tr>
+          </table>
+     </form>
+        {% endif %}
+</div>
+{%endblock%}

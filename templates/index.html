@@ -1,0 +1,25 @@
+{%extends "layout.html"%}
+{% block list%}
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>{%endblock%}
+{%block content%}
+    <div class="home">
+      <h1> Collecting Heights</h1>
+      <h3>Please fill Details</h3>
+      {{ text |safe }}
+      <form action="{{url_for('success')}}" method='POST'>
+        <table border=0>
+       <tr>
+          <th> EMAIL</th><td><input title="your mail is safe with us" placeholder="Enter mail address" type= 'email' name="email_name" required/></td>
+       </tr>
+       <tr>
+          <th> Heights</th><td><input title="Your data is safe with us" placeholder="Enter heights in cm" type= 'text' name="height" required/></td>
+        </tr>
+        <tr>
+            <th>Submit</th><td><input type= 'submit' name="submit"/></td>
+        </tr>
+     </table>
+        </form>
+      </div>
+{%endblock%}

@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home">
+    <h3>Property Details fron m website:"http://www.pyclass.com/real-estate/rock-springs-wy/LCWYROCKSPRINGS/"</h3>
+    <a  href="{{ url_for('graph') }}"> Click here to view graph</a>
+    {{df | safe }}
+</div>
+{% endblock %}
